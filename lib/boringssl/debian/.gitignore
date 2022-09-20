@@ -1,0 +1,10 @@
+.debhelper/
+*.log
+*.substvars
+/out/
+android-libboringssl-dev
+android-libboringssl/
+cmake-obj/
+debhelper-build-stamp
+files
+tmp/

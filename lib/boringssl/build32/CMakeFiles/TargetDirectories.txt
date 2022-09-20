@@ -1,0 +1,3 @@
+D:/Environment/msys64/home/root/adb/lib/boringssl/build32/CMakeFiles/crypto.dir
+D:/Environment/msys64/home/root/adb/lib/boringssl/build32/CMakeFiles/edit_cache.dir
+D:/Environment/msys64/home/root/adb/lib/boringssl/build32/CMakeFiles/rebuild_cache.dir

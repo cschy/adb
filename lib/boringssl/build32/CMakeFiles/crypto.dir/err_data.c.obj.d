@@ -1,0 +1,24 @@
+CMakeFiles/crypto.dir/err_data.c.obj: \
+ D:/Environment/msys64/home/root/adb/lib/boringssl/err_data.c \
+ D:/Environment/msys64/home/root/adb/lib/boringssl/src/include/openssl/base.h \
+ D:/Environment/msys64/mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/stddef.h \
+ D:/Environment/msys64/mingw32/include/stddef.h \
+ D:/Environment/msys64/mingw32/include/crtdefs.h \
+ D:/Environment/msys64/mingw32/include/corecrt.h \
+ D:/Environment/msys64/mingw32/include/_mingw.h \
+ D:/Environment/msys64/mingw32/include/_mingw_mac.h \
+ D:/Environment/msys64/mingw32/include/_mingw_secapi.h \
+ D:/Environment/msys64/mingw32/include/vadefs.h \
+ D:/Environment/msys64/mingw32/include/sdks/_mingw_ddk.h \
+ D:/Environment/msys64/mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/stdint.h \
+ D:/Environment/msys64/mingw32/include/stdint.h \
+ D:/Environment/msys64/mingw32/include/sys/types.h \
+ D:/Environment/msys64/mingw32/include/_mingw_off_t.h \
+ D:/Environment/msys64/mingw32/include/stdio.h \
+ D:/Environment/msys64/mingw32/include/corecrt_stdio_config.h \
+ D:/Environment/msys64/mingw32/include/swprintf.inl \
+ D:/Environment/msys64/mingw32/include/sec_api/stdio_s.h \
+ D:/Environment/msys64/home/root/adb/lib/boringssl/src/include/openssl/is_boringssl.h \
+ D:/Environment/msys64/home/root/adb/lib/boringssl/src/include/openssl/opensslconf.h \
+ D:/Environment/msys64/home/root/adb/lib/boringssl/src/include/openssl/err.h \
+ D:/Environment/msys64/home/root/adb/lib/boringssl/src/include/openssl/type_check.h

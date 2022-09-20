@@ -1,0 +1,62 @@
+Forwarded: https://android.googlesource.com/platform/external/boringssl/+/ab8b888152733533e60c1ebbe8438594a3a2e3d7%5E%21/linux-arm/crypto/fipsmodule/bsaes-armv7.S
+Subject: Always use adr with __thumb2__.
+external/boringssl: Sync to d89d65ba12e28e543df4fd9dfbc687bb8be1dba7.
+
+This includes the following changes:
+
+https://boringssl.googlesource.com/boringssl/+log/45210dd4e21ace9d28cb76b3f83303fcdd2efcce..d89d65ba12e28e543df4fd9dfbc687bb8be1dba7
+
+Test: BoringSSL CTS Presubmits.
+Change-Id: I2dc13b549eac1f345553da07b7fb66824fc77204
+
+--- a/linux-arm/crypto/fipsmodule/bsaes-armv7.S
++++ b/linux-arm/crypto/fipsmodule/bsaes-armv7.S
+@@ -14,8 +14,7 @@
+ @ details see http://www.openssl.org/~appro/cryptogams/.
+ @
+ @ Specific modes and adaptation for Linux kernel by Ard Biesheuvel
+-@ <ard.biesheuvel@linaro.org>. Permission to use under GPL terms is
+-@ granted.
++@ of Linaro. Permission to use under GPL terms is granted.
+ @ ====================================================================
+ 
+ @ Bit-sliced AES for ARM NEON
+@@ -49,10 +48,7 @@
+ @						<appro@openssl.org>
+ 
+ @ April-August 2013
+-@
+-@ Add CBC, CTR and XTS subroutines, adapt for kernel use.
+-@
+-@					<ard.biesheuvel@linaro.org>
++@ Add CBC, CTR and XTS subroutines and adapt for kernel use; courtesy of Ard.
+ 
+ #ifndef __KERNEL__
+ # include <openssl/arm_arch.h>
+@@ -92,7 +88,7 @@
+ _bsaes_decrypt8:
+ 	adr	r6,_bsaes_decrypt8
+ 	vldmia	r4!, {q9}		@ round 0 key
+-#ifdef	__APPLE__
++#if defined(__thumb2__) || defined(__APPLE__)
+ 	adr	r6,.LM0ISR
+ #else
+ 	add	r6,r6,#.LM0ISR-_bsaes_decrypt8
+@@ -583,7 +579,7 @@
+ _bsaes_encrypt8:
+ 	adr	r6,_bsaes_encrypt8
+ 	vldmia	r4!, {q9}		@ round 0 key
+-#ifdef	__APPLE__
++#if defined(__thumb2__) || defined(__APPLE__)
+ 	adr	r6,.LM0SR
+ #else
+ 	sub	r6,r6,#_bsaes_encrypt8-.LM0SR
+@@ -1018,7 +1014,7 @@
+ _bsaes_key_convert:
+ 	adr	r6,_bsaes_key_convert
+ 	vld1.8	{q7},  [r4]!		@ load round 0 key
+-#ifdef	__APPLE__
++#if defined(__thumb2__) || defined(__APPLE__)
+ 	adr	r6,.LM0
+ #else
+ 	sub	r6,r6,#_bsaes_key_convert-.LM0
